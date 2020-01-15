@@ -1,6 +1,6 @@
-{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE DeriveFunctor #-}
 {-# LANGUAGE TypeOperators #-}
+{-# LANGUAGE EmptyCase #-}
 module Iso () where
 
 import Data.Void (Void, absurd)
@@ -77,3 +77,4 @@ splitJoinFunctionIso = iso to from
   where
     to f = (fst . f, snd . f)
     from (ca, cb) = (,) <$> ca <*> cb
+  
