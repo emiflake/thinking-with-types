@@ -24,6 +24,7 @@ dependencies:
 - transformers  == 0.5.*
 - ghc-prim      == 0.5.*
 - contravariant == 1.*
+- invariant     == 0.5.*
 
 library:
   source-dirs: src
@@ -33,9 +34,12 @@ default-extensions:
 - LambdaCase
 - RankNTypes
 - DataKinds
+- KindSignatures
+- ScopedTypeVariables
 - TypeOperators
 - TypeFamilies
-- KindSignatures
+- TypeApplications
+- GADTs
 
 executables:
   thinking-with-types-exe:
