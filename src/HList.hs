@@ -21,7 +21,7 @@ hLength (_ :# t) = succ $ hLength t
 hHead :: HList (a ': as) -> a
 hHead (h :# _) = h
 
-type family All (c :: Type -> Constraint) (xs :: [Type]) :: Constraint where
+type family All (c :: k -> Constraint) (xs :: [Type]) :: Constraint where
   All c '[] = ()
   All c (x ': xs) = (c x, All c xs)
 

@@ -1,7 +1,7 @@
 module Variance () where
 
-import Data.Functor.Contravariant
-import Data.Functor.Invariant
+import           Data.Functor.Contravariant
+import           Data.Functor.Invariant
 
 newtype T1 a = T1 (Int -> a)
 newtype T2 a = T2 (a -> Int)
