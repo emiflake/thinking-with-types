@@ -1,10 +1,14 @@
 {-# LANGUAGE DeriveFunctor #-}
+{-# LANGUAGE EmptyCase     #-}
 {-# LANGUAGE TypeOperators #-}
-{-# LANGUAGE EmptyCase #-}
-module Iso () where
+module Iso
+  ( Iso(..)
+  , iso
+  , (:~=)
+  ) where
 
-import Data.Void (Void, absurd)
-import Data.Tuple
+import           Data.Tuple
+import           Data.Void  (Void, absurd)
 
 newtype Iso a b = Iso { unIso :: (a -> b, b -> a) }
 
@@ -77,4 +81,4 @@ splitJoinFunctionIso = iso to from
   where
     to f = (fst . f, snd . f)
     from (ca, cb) = (,) <$> ca <*> cb
-  
+
